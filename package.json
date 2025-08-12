@@ -1,0 +1,45 @@
+{
+  "bugs": {
+    "url": "https://github.com/JustRelate/slugify/issues"
+  },
+  "description": "Slugifier with multi-alphabet transliteration based on ISO and Unicode standards",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "eslint-plugin-redos": "^4.5.0",
+    "prettier": "^3.6.2",
+    "ts-jest": "^29.4.1",
+    "typescript-eslint": "^8.39.1"
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/JustRelate/slugify#readme",
+  "jest": {
+    "preset": "ts-jest/presets/default-esm"
+  },
+  "keywords": [
+    "slug",
+    "transliteration",
+    "unicode",
+    "iso",
+    "multiscript"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "name": "@justrelate/slugify",
+  "prettier": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustRelate/slugify.git"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "check": "prettier --check .",
+    "lint": "eslint",
+    "prepare": "npm run build",
+    "test": "jest"
+  },
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "version": "1.0.0"
+}
