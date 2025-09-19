@@ -25,7 +25,15 @@
     "multiscript"
   ],
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "name": "@justrelate/slugify",
   "prettier": {},
   "repository": {
@@ -33,13 +41,13 @@
     "url": "git+https://github.com/JustRelate/slugify.git"
   },
   "scripts": {
-    "build": "rm -rf dist && tsc",
+    "build": "rm -rf dist && tsc --module commonjs && mv dist/index.js dist/index.cjs && tsc --declaration --sourcemap",
     "check": "prettier --check .",
     "lint": "eslint",
-    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
     "test": "jest"
   },
   "type": "module",
-  "types": "dist/index.d.ts",
-  "version": "1.0.0"
+  "types": "./dist/index.d.ts",
+  "version": "1.0.1"
 }
