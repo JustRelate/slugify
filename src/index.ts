@@ -10,7 +10,7 @@ export function slugify(input: string): string {
 }
 
 function transformChar(inputChar: string) {
-  for (let low = 0, high = mapping.length; low < high; ) {
+  for (let low = 0, high = mapping.length; low < high;) {
     const midIndex = (low + high) >> 1;
     const comparison = compare(inputChar, mapping[midIndex]![0]);
     if (comparison === 0) return mapping[midIndex]![1];
